@@ -1,16 +1,18 @@
 const covid19ImpactEstimator = (data) => {
   const {
-    reportedCases
+    reportedCases, periodType
   } = data;
 
   let months;
   let weeks;
   let days;
 
-  if (months) {
+  if (periodType === 'months') {
     days = months * 30;
-  } else if (weeks) {
+  } else if (periodType === 'weeks') {
     days = weeks * 7;
+  } else {
+    return days;
   }
 
   return {
@@ -29,12 +31,12 @@ const covid19ImpactEstimator = (data) => {
     },
     impact: {
       currentlyInfected: () => reportedCases * 10,
-      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(days / 3))
+      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(periodType / 3))
 
     },
     severeImpact: {
       currentlyInfected: () => reportedCases * 50,
-      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(days / 3))
+      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(periodType / 3))
     }
   };
 };
