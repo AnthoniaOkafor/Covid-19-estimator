@@ -3,8 +3,6 @@ const covid19ImpactEstimator = (data) => {
     reportedCases
   } = data;
 
-  let impact;
-  let severeImpact;
   let months;
   let weeks;
   let days;
@@ -30,14 +28,16 @@ const covid19ImpactEstimator = (data) => {
       totalHospitalBeds: 1380614
     },
     impact: {
-      currentlyInfected: (reportedCases * 10),
-      infectionByRequestTime: (impact.currentlyInfected * (2 ** Math.floor(days / 3)))
+      currentlyInfected: () => reportedCases * 10,
+      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(days / 3))
 
     },
     severeImpact: {
-      currentlyInfected: (reportedCases * 50),
-      infectionByRequestTime: (severeImpact.currentlyInfected * (2 ** Math.floor(days / 3)))
+      currentlyInfected: () => reportedCases * 50,
+      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(days / 3))
     }
   };
 };
+
+
 export default covid19ImpactEstimator;
