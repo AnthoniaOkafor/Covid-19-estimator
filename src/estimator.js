@@ -4,7 +4,16 @@ const covid19ImpactEstimator = (data) => {
   } = data;
 
   let impact;
-  // let severeImpact;
+  let severeImpact;
+  let months;
+  let weeks;
+  let days;
+
+  if (months) {
+    days = months * 30;
+  } else if (weeks) {
+    days = weeks * 7;
+  }
 
   return {
     data: {
@@ -22,10 +31,13 @@ const covid19ImpactEstimator = (data) => {
     },
     impact: {
       currentlyInfected: (reportedCases * 10),
-      infectionByRequestTime: (impact.currentlyInfected * 514)
+      infectionByRequestTime: (impact.currentlyInfected * (2 ** Math.floor(days / 3)))
 
     },
-    severeImpact: {}
+    severeImpact: {
+      currentlyInfected: (reportedCases * 10),
+      infectionByRequestTime: (severeImpact.currentlyInfected * 514)
+    }
   };
 };
 export default covid19ImpactEstimator;
