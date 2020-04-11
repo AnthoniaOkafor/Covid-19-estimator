@@ -29,14 +29,15 @@ const covid19ImpactEstimator = (data) => {
       population: 66622705,
       totalHospitalBeds: 1380614
     },
-    impact: {
-      currentlyInfected: () => reportedCases * 10,
-      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(periodType / 3))
-
-    },
-    severeImpact: {
-      currentlyInfected: () => reportedCases * 50,
-      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(periodType / 3))
+    estimate: {
+      impact: {
+        currentlyInfected: () => reportedCases * 10,
+        infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(periodType / 3))
+      },
+      severeImpact: {
+        currentlyInfected: () => reportedCases * 50,
+        infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(periodType / 3))
+      }
     }
   };
 };
