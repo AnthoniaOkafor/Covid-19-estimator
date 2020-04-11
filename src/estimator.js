@@ -14,18 +14,18 @@ const dataInput = {
 
 const covid19ImpactEstimator = (data) => {
   const {
-    reportedCases
+    reportedCases, periodType, timeToElapse
   } = data;
 
 
   let numOfInfected;
 
-  if (data.periodType === 'months') {
-    numOfInfected = data.timeToElapse * 30;
-  } else if (data.periodType === 'weeks') {
-    numOfInfected = data.timeToElapse * 7;
-  } else if (data.periodType === 'days') {
-    numOfInfected = data.timeToElapse;
+  if (periodType === 'months') {
+    numOfInfected = timeToElapse * 30;
+  } else if (periodType === 'weeks') {
+    numOfInfected = timeToElapse * 7;
+  } else if (periodType === 'days') {
+    numOfInfected = timeToElapse;
   }
 
   const impact = {
