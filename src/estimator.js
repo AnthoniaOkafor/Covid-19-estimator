@@ -3,23 +3,26 @@ const covid19ImpactEstimator = (data) => {
     reportedCases
   } = data;
 
+
+  let numOfinfected;
+
   if (data.periodType === 'months') {
-    data.periodType *= 30;
+    numOfinfected = data.timeToElapse * 30;
   } else if (data.periodType === 'weeks') {
-    data.periodType *= 7;
+    numOfinfected = data.timeToElapse * 7;
   } else if (data.periodType === 'days') {
-    return data.periodType;
+    numOfinfected = data.timeToElapse;
   }
 
   return {
 
     impact: {
       currentlyInfected: () => reportedCases * 10,
-      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(data.periodType / 3))
+      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(numOfinfected / 3))
     },
     severeImpact: {
       currentlyInfected: () => reportedCases * 10,
-      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(data.periodType / 3))
+      infectionByRequestTime: () => this.currentlyInfected * (2 ** Math.floor(numOfinfected / 3))
     }
   };
 };
