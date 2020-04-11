@@ -30,12 +30,12 @@ const covid19ImpactEstimator = (data) => {
 
   const impact = {
     currentlyInfected: 0,
-    infectionByRequestTime: 0
+    infectionsByRequestedTime: 0
   };
 
   const severeImpact = {
     currentlyInfected: 0,
-    infectionByRequestTime: 0
+    infectionsByRequestedTime: 0
   };
 
 
@@ -44,10 +44,10 @@ const covid19ImpactEstimator = (data) => {
   const factorOfTwo = 2 ** Math.floor(numOfInfected / 3);
 
   impact.currentlyInfected = getDetails(reportedCases, 10);
-  impact.infectionByRequestTime = getDetails(impact.currentlyInfected, factorOfTwo);
+  impact.infectionsByRequestedTime = getDetails(impact.currentlyInfected, factorOfTwo);
 
   severeImpact.currentlyInfected = getDetails(reportedCases, 50);
-  severeImpact.infectionByRequestTime = getDetails(severeImpact.currentlyInfected, factorOfTwo);
+  severeImpact.infectionsByRequestedTime = getDetails(severeImpact.currentlyInfected, factorOfTwo);
 
   return {
     data,
