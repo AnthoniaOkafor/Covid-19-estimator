@@ -45,7 +45,7 @@ const covid19ImpactEstimator = (data) => {
 
   // challenge 1 - working on currentlyInfected and infectionsByRequestedTime
   const getDetails = (details, figures) => details * figures;
-  const factorOfTwo = 2 ** Math.floor(numOfInfected / 3);
+  const factorOfTwo = 2 ** Math.trunc(numOfInfected / 3);
 
   impact.currentlyInfected = getDetails(reportedCases, 10);
   impact.infectionsByRequestedTime = getDetails(impact.currentlyInfected, factorOfTwo);
@@ -56,10 +56,10 @@ const covid19ImpactEstimator = (data) => {
 
   // challenge 2 - working on severeCasesByRequestedTime and hospitalBedsByRequestedTime
   const p15 = 0.15;
-  const findImpactSevereCases = getDetails(impact.infectionsByRequestedTime, 0.15);
+  const findImpactSevereCases = getDetails(impact.infectionsByRequestedTime, p15);
   const findSevereImpactSevereCases = getDetails(severeImpact.infectionsByRequestedTime, p15);
-  impact.severeCasesByRequestedTime = Math.floor(findImpactSevereCases);
-  severeImpact.severeCasesByRequestedTime = Math.floor(findSevereImpactSevereCases);
+  impact.severeCasesByRequestedTime = Math.trunc(findImpactSevereCases);
+  severeImpact.severeCasesByRequestedTime = Math.trunc(findSevereImpactSevereCases);
 
   const numAvailBeds = Math.floor(totalHospitalBeds * (35 / 100));
   impact.hospitalBedsByRequestedTime = numAvailBeds - impact.severeCasesByRequestedTime;
