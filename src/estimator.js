@@ -14,7 +14,7 @@ const dataInput = {
 
 const covid19ImpactEstimator = (data) => {
   const {
-    reportedCases, periodType, timeToElapse
+    reportedCases, periodType, timeToElapse, totalHospitalBeds
   } = data;
 
 
@@ -30,16 +30,20 @@ const covid19ImpactEstimator = (data) => {
 
   const impact = {
     currentlyInfected: 0,
-    infectionsByRequestedTime: 0
+    infectionsByRequestedTime: 0,
+    severeCasesByRequestedTime: 0,
+    hospitalBedsByRequestedTime: 0
   };
 
   const severeImpact = {
     currentlyInfected: 0,
-    infectionsByRequestedTime: 0
+    infectionsByRequestedTime: 0,
+    severeCasesByRequestedTime: 0,
+    hospitalBedsByRequestedTime: 0
   };
 
 
-  // challenge 1 - working on impact and severeImpact objects
+  // challenge 1 - working on currentlyInfected and infectionsByRequestedTime
   const getDetails = (details, figures) => details * figures;
   const factorOfTwo = 2 ** Math.floor(numOfInfected / 3);
 
@@ -48,6 +52,24 @@ const covid19ImpactEstimator = (data) => {
 
   severeImpact.currentlyInfected = getDetails(reportedCases, 50);
   severeImpact.infectionsByRequestedTime = getDetails(severeImpact.currentlyInfected, factorOfTwo);
+
+
+  // challenge 2 - working on severeCasesByRequestedTime and hospitalBedsByRequestedTime
+  const p15 = 15 / 100;
+  const findImpactSevereCases = getDetails(impact.infectionsByRequestedTime, p15);
+  const findSevereImpactSevereCases = getDetails(severeImpact.infectionsByRequestedTime, p15);
+  impact.severeCasesByRequestedTime = Math.trunc(findImpactSevereCases);
+  severeImpact.severeCasesByRequestedTime = Math.trunc(findSevereImpactSevereCases);
+
+  /* const findImpactHospitalBeds = totalHospitalBeds / impact.severeCasesByRequestedTime;
+  const findSevereImpactHospitalBeds = totalHospitalBeds / severeImpact.severeCasesByRequestedTime;
+  impact.hospitalBedsByRequestedTime = Math.trunc(findImpactHospitalBeds);
+  severeImpact.hospitalBedsByRequestedTime = Math.trunc(findSevereImpactHospitalBeds);
+  */
+
+  const numAvailBeds = Math.trunc(totalHospitalBeds * (35 / 100));
+  impact.hospitalBedsByRequestedTime = numAvailBeds - impact.severeCasesByRequestedTime;
+  severeImpact.hospitalBedsByRequestedTime = numAvailBeds - severeImpact.severeCasesByRequestedTime;
 
   return {
     data,
