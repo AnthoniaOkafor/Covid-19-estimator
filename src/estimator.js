@@ -58,16 +58,10 @@ const covid19ImpactEstimator = (data) => {
   const p15 = 15 / 100;
   const findImpactSevereCases = getDetails(impact.infectionsByRequestedTime, p15);
   const findSevereImpactSevereCases = getDetails(severeImpact.infectionsByRequestedTime, p15);
-  impact.severeCasesByRequestedTime = Math.trunc(findImpactSevereCases);
-  severeImpact.severeCasesByRequestedTime = Math.trunc(findSevereImpactSevereCases);
+  impact.severeCasesByRequestedTime = Math.floor(findImpactSevereCases);
+  severeImpact.severeCasesByRequestedTime = Math.floor(findSevereImpactSevereCases);
 
-  /* const findImpactHospitalBeds = totalHospitalBeds / impact.severeCasesByRequestedTime;
-  const findSevereImpactHospitalBeds = totalHospitalBeds / severeImpact.severeCasesByRequestedTime;
-  impact.hospitalBedsByRequestedTime = Math.trunc(findImpactHospitalBeds);
-  severeImpact.hospitalBedsByRequestedTime = Math.trunc(findSevereImpactHospitalBeds);
-  */
-
-  const numAvailBeds = Math.trunc(totalHospitalBeds * (35 / 100));
+  const numAvailBeds = Math.floor(totalHospitalBeds * (35 / 100));
   impact.hospitalBedsByRequestedTime = numAvailBeds - impact.severeCasesByRequestedTime;
   severeImpact.hospitalBedsByRequestedTime = numAvailBeds - severeImpact.severeCasesByRequestedTime;
 
