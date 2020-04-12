@@ -55,8 +55,8 @@ const covid19ImpactEstimator = (data) => {
 
 
   // challenge 2 - working on severeCasesByRequestedTime and hospitalBedsByRequestedTime
-  const p15 = 15 / 100;
-  const findImpactSevereCases = getDetails(impact.infectionsByRequestedTime, p15);
+  const p15 = 0.15;
+  const findImpactSevereCases = getDetails(impact.infectionsByRequestedTime, 0.15);
   const findSevereImpactSevereCases = getDetails(severeImpact.infectionsByRequestedTime, p15);
   impact.severeCasesByRequestedTime = Math.floor(findImpactSevereCases);
   severeImpact.severeCasesByRequestedTime = Math.floor(findSevereImpactSevereCases);
