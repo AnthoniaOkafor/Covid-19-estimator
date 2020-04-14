@@ -1,0 +1,578 @@
+@import "https://fonts.googleapis.com/css?family=Sofia:300,400,500,600,700&display=swap";
+
+html.fonts-loaded body {
+    font-family: 'Sofia', sans-serif;
+}
+
+html.fonts-loaded form {
+    font-family: 'Sofia', sans-serif;
+}
+
+body {
+    text-align: center;
+    /*background-image: url("./images/alinenok-unsplash.jpg");*/
+    
+    font-family: 'Sofia', sans-serif;
+    background-color: black;
+    /*background-position: center;
+    background-size: cover;*/
+}
+
+h1 {
+    color: red;
+}
+
+form {
+    display: inline-block;
+    width: 60%;
+    background-color:#f5f5dc;
+    text-align: left;
+    font-family: 'Sofia', sans-serif;
+}
+
+.outerLegend {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: blue;
+}
+
+.innerLegend {
+    font-size: 20px;
+    color: blue;
+}
+
+.outer {
+   margin: 20px;
+   border-radius: 50px 0;
+   
+}
+
+.inner {
+    margin: 20px 5px;
+    border-radius: 20px;
+ }
+ 
+.labelInput {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 20px 0px;
+
+    
+}
+label {
+    width: 40%;
+    margin-right: 5px;
+    padding: 2px;   
+    color: black;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.nameInput {
+    width: 55%; 
+}
+
+.nameInput > input {
+width: 100%;
+padding: 4px;
+}
+.nameInput::after {
+    content: "name of region";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+.avgAgeInput {
+    width: 55%; 
+}
+.avgAgeInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.avgAgeInput::after {
+    content: "average age in region";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+.avgIncomeInput {
+    width: 55%; 
+}
+.avgIncomeInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.avgIncomeInput::after {
+    content: "average daily income in region";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.avgPopulationInput {
+    width: 55%; 
+}
+.avgPopulationInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.avgPopulationInput::after {
+    content: "population earning avg. daily income(%)";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.populationInput {
+    width: 55%; 
+}
+.populationInput > input {
+    width: 100%;
+    padding: 4px;
+}
+.populationInput::after {
+    content: "population of the region";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.reportedCasesInput {
+    width: 55%; 
+}
+.reportedCasesInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.reportedCasesInput::after {
+    content: "reported cases of Covid-19";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.hospitalBedsInput {
+    width: 55%; 
+}
+.hospitalBedsInput > input {
+    width: 100%;
+    padding: 4px;
+}
+.hospitalBedsInput::after {
+    content: "number of hospital beds in the region";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+.elapseTimeInput {
+    width: 55%; 
+}
+
+.elapseTimeInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.elapseTimeInput::after {
+    content: "start of infection to a time in the future";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.selectPeriodType {
+    width: 55%; 
+}
+
+.selectPeriodType > select {
+    width: 100%;
+    padding: 4px;
+}
+.selectPeriodType::after {
+    content: "length of the period of infection";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.impCurInfectedInput {
+    width: 55%; 
+}
+
+.impCurInfectedInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.impCurInfectedInput::after {
+    content: "number of currently infected people";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.sevCurInfectedInput {
+    width: 55%; 
+}
+.sevCurInfectedInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.sevCurInfectedInput::after {
+    content: "severe impact is impact * 50";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.impInfectionsInput {
+    width: 55%; 
+}
+
+.impInfectionsInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.impInfectionsInput::after {
+    content: "infections within the specified period";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.sevInfectionsInput {
+    width: 55%; 
+}
+
+.sevInfectionsInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.sevInfectionsInput::after {
+    content: "severe impact is impact * 50";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.impSevereCasesInput {
+    width: 55%; 
+}
+
+.impSevereCasesInput > input {
+    width: 100%;
+    padding: 4px;
+}
+.impSevereCasesInput::after {
+    content: "infected people within the period who would require hospitalisation";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.sevSevereCasesInput {
+    width: 55%; 
+}
+.sevSevereCasesInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.sevSevereCasesInput::after {
+    content: "severe impact is impact * 50";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.impHospitalBedsInput {
+    width: 55%; 
+}
+
+.impHospitalBedsInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.impHospitalBedsInput::after {
+    content: "available hospital bed for the hospitalised";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.sevHospitalBedsInput {
+    width: 55%; 
+}
+
+.sevHospitalBedsInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.sevHospitalBedsInput::after {
+    content: "severe impact is impact * 50";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.impICUInput {
+    width: 55%; 
+}
+.impICUInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.impICUInput::after {
+    content: "infected people within the period who would require ICU";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.sevICUInput {
+    width: 55%; 
+}
+.sevICUInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.sevICUInput::after {
+    content: "severe impact is impact * 50";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.impVentilatorInput {
+    width: 55%; 
+}
+.impVentilatorInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.impVentilatorInput::after {
+    content: "infected people within the period who would require ventilator";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.sevVentilatorInput {
+    width: 55%; 
+}
+
+.sevVentilatorInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.sevVentilatorInput::after {
+    content: "severe impact is impact * 50";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.impDollarsInFlightInput {
+    width: 55%; 
+}
+
+.impDollarsInFlightInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.impDollarsInFlightInput::after {
+    content: "money economy will lose";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+.sevDollarsInFlightInput {
+    width: 55%; 
+}
+.sevDollarsInFlightInput > input {
+    width: 100%;
+    padding: 4px;
+}
+
+.sevDollarsInFlightInput::after {
+    content: "severe impact is impact * 50";
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    color: blue
+}
+
+
+input, select {
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.button {
+    display: flex;
+    margin: 35px 20px 20px 20px;
+}
+button {
+    padding: 5px;
+    font-size: 18px;
+    background-color: red;
+    margin-left: auto;
+}
+
+.pHeader {
+    font-size: 18px;
+    color: white;
+}
+
+.p {
+    margin: 0;
+}
+
+@media (max-width: 740px) {
+    label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .selectPeriodType {
+        width: 96%;   
+    }
+       
+    .nameInput {
+        width: 100%;
+        margin-right: 5px;
+    }
+
+    .nameInput > input {
+        width: 100%;
+    }
+    
+    .avgAgeInput {
+        width: 96%; 
+    }
+
+    .avgIncomeInput {
+        width: 96%; 
+    }
+
+    .avgPopulationInput {
+        width: 96%; 
+    }
+
+    .populationInput {
+        width: 96%; 
+    }
+
+    .reportedCasesInput {
+        width: 96%; 
+    }
+
+    .hospitalBedsInput {
+        width: 96%; 
+    }
+
+    .elapseTimeInput {
+        width: 96%; 
+    }
+
+    .selectPeriodType {
+        width: 96%; 
+    }
+
+    .impCurInfectedInput {
+        width: 96%; 
+    }
+
+    .sevCurInfectedInput {
+        width: 96%; 
+    }
+
+    .impInfectionsInput {
+        width: 96%; 
+    }
+
+    .sevInfectionsInput {
+        width: 96%; 
+    }
+
+    .impSevereCasesInput {
+        width: 96%; 
+    }
+
+    .sevSevereCasesInput {
+        width: 96%; 
+    }
+
+    .impHospitalBedsInput {
+        width: 96%; 
+    }
+
+    .sevHospitalBedsInput {
+        width: 96%; 
+    }
+
+    .impICUInput {
+        width: 96%; 
+    }
+
+    .sevICUInput {
+        width: 96%; 
+    }
+
+    .impVentilatorInput {
+        width: 96%; 
+    }
+
+    .sevVentilatorInput {
+        width: 96%; 
+    }
+
+    .impDollarsInFlightInput {
+        width: 96%; 
+    }
+
+    .sevDollarsInFlightInput {
+        width: 96%; 
+    }
+    
+
+}
