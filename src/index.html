@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19 web app by Anthonia Okafor</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script defer src="estimator.js"></script>
+</head>
+<body>
+    <header>
+            <h1> Covid-19 Estimator</h1>
+            <p class="pHeader">Fill in the details below</p>
+    </header>
+    <main>
+        <form action="index.html" method="POST" id= "covid-19EstimateForm" onsubmit="return covid19ImpactEstimator(this)">
+            <fieldset class="outer">
+                <legend class="outerLegend">Region Details:</legend>
+                <div class= "labelInput">
+                    <label for="data-region-name">Name</label><div class="nameInput"><input type="text" name="data-region-name" id="data-region-name" value="Africa" required>
+                        </div>
+        
+                </div>
+                <div class="labelInput">
+                    <label for="data-region-avgAge">Average Age</label><div class="avgAgeInput"><input type="number" name ="data-region-avgAge" id="data-region-avgAge" value="0" required></div>
+                </div>
+                <div class="labelInput">
+                    <label for="data-region-avgDailyIncome">Average Daily Income ($)</label><div class="avgIncomeInput"><input type="number" name="data-region-avgDailyIncome" id="data-region-avgDailyIncome" value="0" required></div>
+                </div>
+                <div class="labelInput">
+                    <label for="data-region-avgDailyIncPopulation">Average Daily Income Population</label><div class="avgPopulationInput"><input type="number" name="data-region-avgDailyIncPopulation" id="data-region-avgDailyIncPopulation" value="0" required></div>
+                </div>
+            </fieldset>
+
+            <fieldset class="outer">
+                <legend class="outerLegend">Infection Details:</legend>
+                <div class= "labelInput">
+                    <label for="data-population">Population</label><div class="populationInput"><input type="number" id="data-population" value="0" required></div>
+                </div> 
+                <div class="labelInput">
+                    <label for="data-reported-cases">Reported Cases</label><div class="reportedCasesInput"><input type="number" name="data-reported-cases" id="data-reported-cases" value="0" required></div>
+                </div>
+                <div class="labelInput">
+                    <label for="data-total-hospital-beds">Total Hospital Beds</label><div class="hospitalBedsInput"><input type="number" name="data-total-hospital-beds" id="data-total-hospital-beds" value="0" required></div>
+                </div>
+                <div class="labelInput">
+                    <label for="data-time-to-elapse">Time to Elapse</label><div class="elapseTimeInput"><input type="number" name ="data-time-to-elapse" id="data-time-to-elapse" value="0" required></div>
+                </div>
+                <div class="labelInput">
+                    <label for="data-period-type">Period Type</label>
+                    <div class="selectPeriodType">
+                    <select id="data-period-type" required>
+                        <option value="days">days</option>
+                        <option value="weeks">weeks</option>
+                        <option value="months">months</option>
+                    </select>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="button">
+                <button id="data-go-estimate" onclick="covid19ImpactEstimator(data)">Submit</button>
+            </div>
+           
+        </form>
+    </main>
+    
+    <script src="fontfaceobserver.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        const sofiaObserver = new FontFaceObserver('Sofia');
+        sofiaObserver.load().then(() => {
+            document.documentElement.className += " fonts-loaded";
+        });
+    </script>
+  
+</body>
+</body>
+</html>
