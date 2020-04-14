@@ -25,7 +25,7 @@ h1 {
 form {
     display: inline-block;
     width: 60%;
-    background-color:#20231f;
+    background-color:#f5f5dc;
     text-align: left;
     font-family: 'Sofia', sans-serif;
 }
@@ -65,7 +65,7 @@ label {
     width: 40%;
     margin-right: 5px;
     padding: 2px;   
-    color: orange;
+    color: black;
     font-size: 20px;
     border-radius: 5px;
 }
